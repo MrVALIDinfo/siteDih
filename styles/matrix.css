@@ -1,0 +1,24 @@
+#matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 20; /* Оптимальная видимость */
+}
+
+/* Улучшаем читаемость контента поверх Matrix */
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 15, 0, 0.85);
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 40px rgba(0, 255, 0, 0.4);
+}
+
+.nav-top {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 30, 0, 0.95);
+}

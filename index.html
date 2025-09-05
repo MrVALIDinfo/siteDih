@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RDBCO TERMINAL SYSTEM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/matrix.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <!-- Canvas для Matrix эффекта -->
+  <canvas id="matrix-bg"></canvas>
+  
+  <!-- Верхняя навигация -->
+  <div class="nav-top">
+    <div class="logo">RDBCO</div>
+    <div class="nav-items">
+      <div class="nav-item active" data-section="home">Home</div>
+      <div class="nav-item" data-section="login">Login</div>
+      <div class="nav-item" data-section="info">Info</div>
+      <div class="nav-item" data-section="news">News</div>
+    </div>
+  </div>
+
+  <!-- Основной контейнер -->
+  <div class="container">
+    <!-- Домашняя секция -->
+    <div id="home" class="section active">
+      <!-- Герой секция -->
+      <div class="hero">
+        <div class="hero-text">
+          <h1 class="hero-title">RDBCO TERMINAL SYSTEM v2.0.0</h1>
+          <p class="hero-description">Advanced security terminal system with encrypted connection and real-time monitoring. Protect your data with military-grade encryption algorithms and cutting-edge threat detection.</p>
+          <div class="typing-animation">> SYSTEM STATUS: OPERATIONAL</div>
+          <div class="loading-bar"></div>
+        </div>
+        <div class="hero-image">
+          <div class="image-placeholder">Ваше основное PNG изображение</div>
+        </div>
+      </div>
+
+      <!-- Сетка изображений -->
+      <div class="image-grid">
+        <div class="grid-item">
+          <div class="image-placeholder">Ваше PNG 1</div>
+        </div>
+        <div class="grid-item">
+          <div class="image-placeholder">Ваше PNG 2</div>
+        </div>
+        <div class="grid-item">
+          <div class="image-placeholder">Ваше PNG 3</div>
+        </div>
+      </div>
+
+      <!-- Контент -->
+      <div class="content">
+        <div class="header">
+          <h2>SYSTEMS: SECURE CONNECTION ENCRYPTION: 256-081 YEBSIGN: RDBCO-TEMP v2.0.0</h2>
+        </div>
+
+        <!-- Системное время -->
+        <div class="card">
+          <div class="card-title">System Time</div>
+          <div id="system-time" class="typing-animation">2025-09-05 17:58:42</div>
+          <div class="loading-bar"></div>
+        </div>
+
+        <!-- Опции -->
+        <div class="options">
+          <div class="option-item">Uptime</div>
+          <div class="option-item">Main 36s</div>
+          <div class="option-item">Status</div>
+          <div class="option-item">Mode</div>
+          <div class="option-item">Security</div>
+          <div class="option-item">Integrity</div>
+          <div class="option-item">Nominal</div>
+          <div class="option-item">Maximum</div>
+          <div class="option-item">Verified</div>
+        </div>
+
+        <!-- Статистика -->
+        <div class="stats">
+          <div class="stat">
+            <div>CPU Load</div>
+            <div class="stat-value" id="cpu-load">29%</div>
+          </div>
+          <div class="stat">
+            <div>Mem</div>
+            <div class="stat-value" id="mem-usage">3.7 GB</div>
+          </div>
+          <div class="stat">
+            <div>Net In</div>
+            <div class="stat-value" id="net-in">1.5 MB/s</div>
+          </div>
+          <div class="stat">
+            <div>Net Out</div>
+            <div class="stat-value" id="net-out">1.7 MB/s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция логина -->
+    <div id="login" class="section">
+      <h1 class="hero-title">SECURE LOGIN</h1>
+      <p class="hero-description">Access restricted areas with your credentials. All login attempts are monitored and logged.</p>
+      
+      <div class="login-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button class="btn">Authenticate</button>
+        <button class="btn btn-secondary">Register</button>
+      </div>
+
+      <div class="info-panel">
+        <h3 class="info-title">SECURITY NOTICE</h3>
+        <p class="info-text">> Ensure you are using a secure connection<br>> Your credentials are encrypted with AES-256<br>> Multiple failed attempts will trigger lockdown</p>
+      </div>
+    </div>
+
+    <!-- Секция информации -->
+    <div id="info" class="section">
+      <h1 class="hero-title">SYSTEM INFORMATION</h1>
+      
+      <div class="hero">
+        <div class="hero-text">
+          <p class="hero-description">RDBCO Terminal System is a advanced security platform designed for real-time monitoring and threat detection. The system utilizes machine learning algorithms to identify and neutralize potential threats before they can cause harm.</p>
+          <div class="typing-animation">> SYSTEM INTEGRITY: 100%</div>
+          <div class="loading-bar"></div>
+        </div>
+        <div class="hero-image">
+          <div class="image-placeholder">Ваше информационное PNG</div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h3 class="info-title">TECHNICAL SPECIFICATIONS</h3>
+        <p class="info-text">
+          > Encryption: AES-256 with elliptic curve cryptography<br>
+          > Real-time monitoring: 500+ parameters<br>
+          > Threat database: Updated every 5 minutes<br>
+          > Response time: &lt;50ms for critical threats<br>
+          > Compatibility: Windows, Linux, macOS, Android, iOS
+        </p>
+      </div>
+
+      <div class="image-grid">
+        <div class="grid-item">
+          <div class="image-placeholder">Технология 1</div>
+        </div>
+        <div class="grid-item">
+          <div class="image-placeholder">Технология 2</div>
+        </div>
+        <div class="grid-item">
+          <div class="image-placeholder">Технология 3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция новостей -->
+    <div id="news" class="section">
+      <h1 class="hero-title">SECURITY NEWS</h1>
+      <p class="hero-description">Latest updates from the cybersecurity world. Stay informed about recent threats and vulnerabilities.</p>
+      
+      <div class="news-container">
+        <div class="news-item">
+          <div class="news-date">2025-09-05</div>
+          <h3 class="news-title">New Zero-Day Vulnerability Discovered</h3>
+          <p class="news-content">Security researchers have identified a critical zero-day vulnerability in popular web browsers. RDBCO systems are already protected against this threat.</p>
+        </div>
+        
+        <div class="news-item">
+          <div class="news-date">2025-09-03</div>
+          <h3 class="news-title">RDBCO System Update v2.0.0 Released</h3>
+          <p class="news-content">The latest update includes enhanced threat detection algorithms and improved performance. All users are advised to update immediately.</p>
+        </div>
+        
+        <div class="news-item">
+          <div class="news-date">2025-08-28</div>
+          <h3 class="news-title">Global Cyber Attack Thwarted</h3>
+          <p class="news-content">A coordinated cyber attack targeting financial institutions was prevented by RDBCO systems. No data was compromised.</p>
+        </div>
+      </div>
+
+      <div class="image-grid">
+        <div class="grid-item">
+          <div class="image-placeholder">Новость 1</div>
+        </div>
+        <div class="grid-item">
+          <div class="image-placeholder">Новость 2</div>
+        </div>
+        <div class="grid-item">
+          <div class="image-placeholder">Новость 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Эффекты -->
+  <div class="scanlines"></div>
+  <div class="flicker"></div>
+
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
