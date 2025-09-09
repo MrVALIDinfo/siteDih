@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // === Функция для показа toast-уведомлений ===
+  function showToast(message, type = 'error') {
+    const container = document.getElementById('toast-container');
+    if (!container) return alert(message); // fallback
+
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    // Авто-удаление после анимации
+    setTimeout(() => toast.remove(), 3000);
+  }
+
   // === Обновление системного времени ===
   function updateSystemTime() {
     const now = new Date();
@@ -36,21 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // === Функции для секций ===
   function showSection(sectionId) {
-    // Скрываем все секции
     sections.forEach(sec => sec.classList.remove('active'));
     navItems.forEach(nav => nav.classList.remove('active'));
 
-    // Отображаем секцию
     const sec = document.getElementById(sectionId);
     if (sec) sec.classList.add('active');
 
-    // Делаем активной соответствующую навигацию (кроме login/register)
     if (sectionId !== 'login' && sectionId !== 'register') {
       const nav = document.querySelector(`.nav-item[data-section="${sectionId}"]`);
       if (nav) nav.classList.add('active');
     }
 
-    // Если login или register — показываем форму внутри login-секции
     if (sectionId === 'login') showLoginForm();
     if (sectionId === 'register') showRegisterForm();
   }
@@ -60,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loginForm.style.display = "block";
       registerForm.style.display = "none";
       loginTitle.textContent = "SECURE LOGIN";
-      loginDesc.textContent = "Access restricted areas with your credentials. All login attempts are monitored and logged.";
+      loginDesc.textContent = "Access restricted areas with your credentials.";
     }
   }
 
@@ -69,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loginForm.style.display = "none";
       registerForm.style.display = "block";
       loginTitle.textContent = "REGISTER";
-      loginDesc.textContent = "Create your secure account to access the system.";
+      loginDesc.textContent = "Create your secure account.";
     }
   }
 
@@ -82,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // === Кнопки внутри логина/регистрации ===
+  // === Кнопки логина/регистрации ===
   showRegisterBtn.addEventListener("click", () => {
     showRegisterForm();
     window.history.pushState({}, "", "/register");
@@ -119,15 +129,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       if (response.ok) {
-        alert("✅ Регистрация успешна!");
+        showToast("✅ Успешно зарегистрирован!", "success");
         showLoginForm();
         window.history.pushState({}, "", "/login");
       } else {
-        const error = await response.text();
-        alert("❌ Ошибка: " + error);
+        showToast("❌ Регистрация не прошла", "error");
       }
     } catch (e) {
-      alert("⚠️ Ошибка соединения с сервером");
+      showToast("⚠️ Нет связи с сервером", "error");
     }
   });
 
@@ -145,15 +154,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (response.ok) {
         const user = await response.json();
-        alert("👋 Добро пожаловать, " + user.username + "!");
+        showToast("👋 Привет, " + user.username + "!", "success");
         showSection("home");
         window.history.pushState({}, "", "/home");
       } else {
-        const error = await response.text();
-        alert("❌ Ошибка входа: " + error);
+        showToast("❌ Неверный логин или пароль", "error");
       }
     } catch (e) {
-      alert("⚠️ Ошибка соединения с сервером");
+      showToast("⚠️ Нет связи с сервером", "error");
     }
   });
 });

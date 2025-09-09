@@ -8,13 +8,16 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/matrix.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/errors.css"> <!-- Для toast уведомлений -->
 </head>
 <body>
-  <!-- Тост уведомление -->
+
+  <!-- Контейнер для toast уведомлений -->
   <div id="toast-container"></div>
+
   <!-- Canvas для Matrix эффекта -->
   <canvas id="matrix-bg"></canvas>
-  
+
   <!-- Верхняя навигация -->
   <div class="nav-top">
     <div class="logo">RDBCO</div>
@@ -28,7 +31,7 @@
 
   <!-- Основной контейнер -->
   <div class="container">
-    <!-- Домашняя секция -->
+    <!-- HOME -->
     <div id="home" class="section active">
       <div class="hero">
         <div class="hero-text">
@@ -75,12 +78,10 @@
       </div>
     </div>
 
-    <!-- Секция логина -->
+    <!-- LOGIN -->
     <div id="login" class="section">
       <h1 class="hero-title" id="login-title">SECURE LOGIN</h1>
       <p class="hero-description" id="login-desc">Access restricted areas with your credentials. All login attempts are monitored and logged.</p>
-      
-      <!-- Форма входа -->
       <div class="login-form" id="login-form">
         <div class="form-group">
           <label for="username">Username:</label>
@@ -93,8 +94,6 @@
         <button class="btn aut">Authenticate</button>
         <button class="btn reg" id="show-register">Register</button>
       </div>
-
-      <!-- Форма регистрации (скрыта по умолчанию) -->
       <div class="login-form" id="register-form" style="display:none;">
         <div class="form-group">
           <label for="reg-username">Username:</label>
@@ -111,14 +110,13 @@
         <button class="btn reg">Register</button>
         <button class="btn aut" id="back-to-login">Back to Login</button>
       </div>
-
       <div class="info-panel">
         <h3 class="info-title">SECURITY NOTICE</h3>
         <p class="info-text">> Ensure you are using a secure connection<br>> Your credentials are encrypted with AES-256<br>> Multiple failed attempts will trigger lockdown</p>
       </div>
     </div>
 
-    <!-- Секция информации -->
+    <!-- INFO -->
     <div id="info" class="section">
       <h1 class="hero-title">SYSTEM INFORMATION</h1>
       <div class="hero">
@@ -148,7 +146,7 @@
       </div>
     </div>
 
-    <!-- Секция новостей -->
+    <!-- NEWS -->
     <div id="news" class="section">
       <h1 class="hero-title">SECURITY NEWS</h1>
       <p class="hero-description">Latest updates from the cybersecurity world. Stay informed about recent threats and vulnerabilities.</p>
@@ -181,10 +179,11 @@
   <div class="scanlines"></div>
   <div class="flicker"></div>
 
+  <!-- Скрипты -->
   <script src="scripts/matrix.js"></script>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js"></script> <!-- JS с showToast -->
 
-  <!-- Скрипт переключения -->
+  <!-- Скрипт переключения формы логин/регистрация -->
   <script>
     const loginForm = document.getElementById("login-form");
     const registerForm = document.getElementById("register-form");
