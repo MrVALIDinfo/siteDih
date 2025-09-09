@@ -1,0 +1,92 @@
+/* ======= Общие стили ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Share Tech Mono', monospace;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  text-shadow: 0 0 5px #0f0;
+}
+
+/* ======= Верхняя панель ======= */
+#toast-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(0, 20, 0, 0.95);
+  border-bottom: 1px solid #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  font-size: 14px;
+  z-index: 1000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toast {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.toast.error {
+  color: #f00;
+}
+
+/* ======= Контейнер основного контента ======= */
+.container {
+  position: relative;
+  padding: 50px 40px 20px 40px; /* верхний отступ под панель */
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  overflow-y: auto;
+  background: rgba(0, 15, 0, 0.85);
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+}
+
+/* ======= Остальные стили (системное время, статистика, формы) ======= */
+.card-title, .hero-title, .info-title, .news-title {
+  text-shadow: 0 0 15px #0f0, 0 0 20px #0f0;
+}
+
+.stat-value {
+  color: #0f0;
+  font-weight: bold;
+}
+
+.login-form input {
+  background: rgba(0, 30, 0, 0.5);
+  border: 1px solid #008800;
+  color: #0f0;
+  padding: 12px;
+  border-radius: 3px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.btn {
+  background: rgba(0, 40, 0, 0.8);
+  border: 1px solid #00aa00;
+  color: #0f0;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background: rgba(0, 60, 0, 0.9);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
