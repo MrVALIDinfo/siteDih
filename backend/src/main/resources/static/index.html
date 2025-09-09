@@ -28,7 +28,6 @@
   <div class="container">
     <!-- Домашняя секция -->
     <div id="home" class="section active">
-      <!-- Герой секция -->
       <div class="hero">
         <div class="hero-text">
           <h1 class="hero-title">RDBCO TERMINAL SYSTEM v2.0.0</h1>
@@ -40,34 +39,20 @@
           <div class="image-placeholder">Ваше основное PNG изображение</div>
         </div>
       </div>
-
-      <!-- Сетка изображений -->
       <div class="image-grid">
-        <div class="grid-item">
-          <div class="image-placeholder">Ваше PNG 1</div>
-        </div>
-        <div class="grid-item">
-          <div class="image-placeholder">Ваше PNG 2</div>
-        </div>
-        <div class="grid-item">
-          <div class="image-placeholder">Ваше PNG 3</div>
-        </div>
+        <div class="grid-item"><div class="image-placeholder">Ваше PNG 1</div></div>
+        <div class="grid-item"><div class="image-placeholder">Ваше PNG 2</div></div>
+        <div class="grid-item"><div class="image-placeholder">Ваше PNG 3</div></div>
       </div>
-
-      <!-- Контент -->
       <div class="content">
         <div class="header">
           <h2>SYSTEMS: SECURE CONNECTION ENCRYPTION: 256-081 YEBSIGN: RDBCO-TEMP v2.0.0</h2>
         </div>
-
-        <!-- Системное время -->
         <div class="card">
           <div class="card-title">System Time</div>
           <div id="system-time" class="typing-animation">2025-09-05 17:58:42</div>
           <div class="loading-bar"></div>
         </div>
-
-        <!-- Опции -->
         <div class="options">
           <div class="option-item">Uptime</div>
           <div class="option-item">Main 36s</div>
@@ -79,35 +64,22 @@
           <div class="option-item">Maximum</div>
           <div class="option-item">Verified</div>
         </div>
-
-        <!-- Статистика -->
         <div class="stats">
-          <div class="stat">
-            <div>CPU Load</div>
-            <div class="stat-value" id="cpu-load">29%</div>
-          </div>
-          <div class="stat">
-            <div>Mem</div>
-            <div class="stat-value" id="mem-usage">3.7 GB</div>
-          </div>
-          <div class="stat">
-            <div>Net In</div>
-            <div class="stat-value" id="net-in">1.5 MB/s</div>
-          </div>
-          <div class="stat">
-            <div>Net Out</div>
-            <div class="stat-value" id="net-out">1.7 MB/s</div>
-          </div>
+          <div class="stat"><div>CPU Load</div><div class="stat-value" id="cpu-load">29%</div></div>
+          <div class="stat"><div>Mem</div><div class="stat-value" id="mem-usage">3.7 GB</div></div>
+          <div class="stat"><div>Net In</div><div class="stat-value" id="net-in">1.5 MB/s</div></div>
+          <div class="stat"><div>Net Out</div><div class="stat-value" id="net-out">1.7 MB/s</div></div>
         </div>
       </div>
     </div>
 
     <!-- Секция логина -->
     <div id="login" class="section">
-      <h1 class="hero-title">SECURE LOGIN</h1>
-      <p class="hero-description">Access restricted areas with your credentials. All login attempts are monitored and logged.</p>
+      <h1 class="hero-title" id="login-title">SECURE LOGIN</h1>
+      <p class="hero-description" id="login-desc">Access restricted areas with your credentials. All login attempts are monitored and logged.</p>
       
-      <div class="login-form">
+      <!-- Форма входа -->
+      <div class="login-form" id="login-form">
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" id="username" placeholder="Enter your username">
@@ -117,7 +89,25 @@
           <input type="password" id="password" placeholder="Enter your password">
         </div>
         <button class="btn aut">Authenticate</button>
+        <button class="btn reg" id="show-register">Register</button>
+      </div>
+
+      <!-- Форма регистрации (скрыта по умолчанию) -->
+      <div class="login-form" id="register-form" style="display:none;">
+        <div class="form-group">
+          <label for="reg-username">Username:</label>
+          <input type="text" id="reg-username" placeholder="Choose a username">
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email:</label>
+          <input type="email" id="reg-email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password:</label>
+          <input type="password" id="reg-password" placeholder="Choose a password">
+        </div>
         <button class="btn reg">Register</button>
+        <button class="btn aut" id="back-to-login">Back to Login</button>
       </div>
 
       <div class="info-panel">
@@ -129,7 +119,6 @@
     <!-- Секция информации -->
     <div id="info" class="section">
       <h1 class="hero-title">SYSTEM INFORMATION</h1>
-      
       <div class="hero">
         <div class="hero-text">
           <p class="hero-description">RDBCO Terminal System is a advanced security platform designed for real-time monitoring and threat detection. The system utilizes machine learning algorithms to identify and neutralize potential threats before they can cause harm.</p>
@@ -140,7 +129,6 @@
           <div class="image-placeholder">Ваше информационное PNG</div>
         </div>
       </div>
-
       <div class="info-panel">
         <h3 class="info-title">TECHNICAL SPECIFICATIONS</h3>
         <p class="info-text">
@@ -151,17 +139,10 @@
           > Compatibility: Windows, Linux, macOS, Android, iOS
         </p>
       </div>
-
       <div class="image-grid">
-        <div class="grid-item">
-          <div class="image-placeholder">Технология 1</div>
-        </div>
-        <div class="grid-item">
-          <div class="image-placeholder">Технология 2</div>
-        </div>
-        <div class="grid-item">
-          <div class="image-placeholder">Технология 3</div>
-        </div>
+        <div class="grid-item"><div class="image-placeholder">Технология 1</div></div>
+        <div class="grid-item"><div class="image-placeholder">Технология 2</div></div>
+        <div class="grid-item"><div class="image-placeholder">Технология 3</div></div>
       </div>
     </div>
 
@@ -169,37 +150,27 @@
     <div id="news" class="section">
       <h1 class="hero-title">SECURITY NEWS</h1>
       <p class="hero-description">Latest updates from the cybersecurity world. Stay informed about recent threats and vulnerabilities.</p>
-      
       <div class="news-container">
         <div class="news-item">
           <div class="news-date">2025-09-05</div>
           <h3 class="news-title">New Zero-Day Vulnerability Discovered</h3>
           <p class="news-content">Security researchers have identified a critical zero-day vulnerability in popular web browsers. RDBCO systems are already protected against this threat.</p>
         </div>
-        
         <div class="news-item">
           <div class="news-date">2025-09-03</div>
           <h3 class="news-title">RDBCO System Update v2.0.0 Released</h3>
           <p class="news-content">The latest update includes enhanced threat detection algorithms and improved performance. All users are advised to update immediately.</p>
         </div>
-        
         <div class="news-item">
           <div class="news-date">2025-08-28</div>
           <h3 class="news-title">Global Cyber Attack Thwarted</h3>
           <p class="news-content">A coordinated cyber attack targeting financial institutions was prevented by RDBCO systems. No data was compromised.</p>
         </div>
       </div>
-
       <div class="image-grid">
-        <div class="grid-item">
-          <div class="image-placeholder">Новость 1</div>
-        </div>
-        <div class="grid-item">
-          <div class="image-placeholder">Новость 2</div>
-        </div>
-        <div class="grid-item">
-          <div class="image-placeholder">Новость 3</div>
-        </div>
+        <div class="grid-item"><div class="image-placeholder">Новость 1</div></div>
+        <div class="grid-item"><div class="image-placeholder">Новость 2</div></div>
+        <div class="grid-item"><div class="image-placeholder">Новость 3</div></div>
       </div>
     </div>
   </div>
@@ -210,5 +181,27 @@
 
   <script src="scripts/matrix.js"></script>
   <script src="scripts/main.js"></script>
+
+  <!-- Скрипт переключения -->
+  <script>
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+    const title = document.getElementById("login-title");
+    const desc = document.getElementById("login-desc");
+
+    document.getElementById("show-register").addEventListener("click", () => {
+      loginForm.style.display = "none";
+      registerForm.style.display = "block";
+      title.textContent = "REGISTER";
+      desc.textContent = "Create your secure account to access the system.";
+    });
+
+    document.getElementById("back-to-login").addEventListener("click", () => {
+      registerForm.style.display = "none";
+      loginForm.style.display = "block";
+      title.textContent = "SECURE LOGIN";
+      desc.textContent = "Access restricted areas with your credentials. All login attempts are monitored and logged.";
+    });
+  </script>
 </body>
 </html>
