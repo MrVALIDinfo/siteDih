@@ -44,7 +44,7 @@ Interactive login and registration forms with error handling and notifications.
 
 Team
 
-Project Author: [Your Name]
+Project Author: MrValidation
 
 Co-author: Transcendentalism
 
